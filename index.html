@@ -1,52 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>rayrabbit-ai | Portafolio Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">rayrabbit-ai</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="sdichiera/index.html">SDichiera</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
-        </nav>
-    </header>
-    <section id="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Your tagline or a brief introduction goes here.</p>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hola, soy rayrabbit-ai</h1>
+                <p class="subtitle">Desarrollador Full Stack | Especialista en IA | Innovador</p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">Ver mis proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactarme</a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>A short bio about yourself.</p>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Soy un desarrollador apasionado con experiencia en desarrollo web, inteligencia artificial y soluciones innovadoras. Me encanta crear aplicaciones que resuelven problemas reales y generan impacto.</p>
+                    <div class="skills">
+                        <h3>Habilidades</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">API REST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="projects">
-        <h2>My Projects</h2>
-        <ul>
-            <li>Project 1 - Description</li>
-            <li>Project 2 - Description</li>
-            <li>Project 3 - Description</li>
-        </ul>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250?text=Proyecto+1" alt="Proyecto 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto 1</h3>
+                        <p>Descripción breve del proyecto y las tecnologías utilizadas.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">Ver Código</a>
+                            <a href="#" class="link-btn">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250?text=Proyecto+2" alt="Proyecto 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción breve del proyecto y las tecnologías utilizadas.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">Ver Código</a>
+                            <a href="#" class="link-btn">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto 3</h3>
+                        <p>Descripción breve del proyecto y las tecnologías utilizadas.</p>
+                        <div class="project-tags">
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">Ver Código</a>
+                            <a href="#" class="link-btn">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-content">
+                <p>¿Tienes un proyecto en mente? Me encantaría colaborar contigo.</p>
+                <div class="contact-methods">
+                    <a href="https://github.com/rayrabbit-ai" class="contact-link" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="mailto:tu-email@example.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/tu-perfil" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://twitter.com/tu-usuario" class="contact-link" target="_blank">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 rayrabbit-ai. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
