@@ -1,20 +1,18 @@
 /* LinkedIn-style Professional UI - Neutral Palette */
 :root {
-  --primary: #2d3436; /* Dark charcoal instead of blue */
-  --primary-hover: #000000;
-  --bg-body: #f3f2ef; /* LinkedIn light gray background */
+  --primary: #0a66c2; /* LinkedIn Blue for brand trust */
+  --primary-hover: #004182;
+  --bg-body: #f3f2ef;
   --bg-card: #ffffff;
-  --text-main: #000000;
-  --text-sub: #666666;
+  --text-main: rgba(0, 0, 0, 0.9);
+  --text-sub: rgba(0,0,0,0.6);
   --border: #e0e0e0;
   --shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
-  --header-height: 70px;
+  --header-height: 52px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,7 +49,7 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-links a {
@@ -59,6 +57,7 @@ header {
   color: var(--text-sub);
   font-weight: 600;
   font-size: 0.9rem;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
@@ -67,7 +66,18 @@ header {
 
 .lang-switch {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  color: var(--text-sub);
+}
+
+.lang-switch a.active {
+  color: var(--primary);
 }
 
 /* Hero Section */
@@ -82,20 +92,22 @@ header {
 
 .hero-banner {
   height: 200px;
-  background-color: #a0a0a0; /* Neutral gray banner */
+  background: linear-gradient(135deg, #a0a0a0 0%, #d1d5db 100%);
 }
 
 .hero-content {
   padding: 0 24px;
-  margin-top: -60px;
+  margin-top: -80px;
 }
 
 .profile-pic {
-  width: 152px;
-  height: 152px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 4px solid var(--bg-card);
-  background-color: #ddd;
+  background-color: #fff;
+  object-fit: cover;
+  box-shadow: var(--shadow);
 }
 
 .hero-info {
@@ -103,24 +115,31 @@ header {
 }
 
 .hero-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-top: 4px;
+}
+
+.hero-location {
+  font-size: 0.9rem;
   color: var(--text-sub);
+  margin-top: 4px;
 }
 
 .hero-actions {
   display: flex;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 /* Buttons */
 .btn {
-  padding: 8px 16px;
+  padding: 8px 24px;
   border-radius: 1600px;
   font-weight: 600;
   text-decoration: none;
@@ -129,6 +148,7 @@ header {
   gap: 8px;
   cursor: pointer;
   transition: all 0.2s;
+  font-size: 1rem;
 }
 
 .btn-primary {
@@ -148,8 +168,8 @@ header {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(0,0,0,0.05);
-  border-width: 2px;
+  background-color: rgba(10, 102, 194, 0.1);
+  box-shadow: inset 0 0 0 1px var(--primary);
 }
 
 /* Sections & Cards */
@@ -159,91 +179,158 @@ header {
   border-radius: 8px;
   margin-top: 12px;
   padding: 24px;
+  transition: box-shadow 0.3s;
+}
+
+.section:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .section-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
 }
 
 /* Experience */
 .exp-item {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
 .exp-item:last-child {
-  border-bottom: none;
-}
-
-.exp-logo {
-  width: 48px;
-  height: 48px;
-  background-color: #eee;
+  margin-bottom: 0;
 }
 
 .exp-content h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  color: var(--primary);
 }
 
 .exp-company {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 4px;
 }
 
 .exp-date {
   font-size: 0.85rem;
   color: var(--text-sub);
+  margin-bottom: 12px;
 }
 
 .exp-desc {
-  margin-top: 8px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
 /* Metrics Table */
 .impact-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 12px;
+  margin: 16px 0;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .impact-table th, .impact-table td {
-  padding: 8px;
+  padding: 12px;
   border: 1px solid var(--border);
   text-align: left;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 .impact-table th {
   background-color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.skill-category h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.skill-category ul {
+  list-style: none;
+}
+
+.skill-category li {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.skill-category li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
 }
 
 /* Footer */
 footer {
-  padding: 40px 0;
+  padding: 48px 0;
   text-align: center;
   color: var(--text-sub);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
 /* Back to Top */
 #back-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 32px;
+  right: 32px;
   background: var(--primary);
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s, opacity 0.3s;
+  z-index: 1000;
+}
+
+#back-to-top:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+    margin-top: -60px;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    display: none;
+  }
 }

@@ -1,41 +1,44 @@
-// Smooth Scrolling
-const smoothScroll = (target) => {
-    const element = document.querySelector(target);
+// Handle Back to Top Button
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'flex';
+        backToTop.style.opacity = '1';
+    } else {
+        backToTop.style.opacity = '0';
+        setTimeout(() => {
+            if (window.pageYOffset <= 300) {
+                backToTop.style.display = 'none';
+            }
+        }, 300);
+    }
+});
+
+backToTop.addEventListener('click', () => {
     window.scrollTo({
-        top: element.offsetTop,
+        top: 0,
         behavior: 'smooth'
     });
-};
+});
 
-// Intersection Observer Animations
+// Intersection Observer for Section Fade-in
 const observerOptions = {
-    root: null,
-    rootMargin: '0px',
     threshold: 0.1
 };
 
-const animateOnScroll = (entries) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-        } else {
-            entry.target.classList.remove('fade-in');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
-};
+}, observerOptions);
 
-const observer = new IntersectionObserver(animateOnScroll, observerOptions);
-
-// Targeting elements to observe
-const elementsToAnimate = document.querySelectorAll('.animate');
-elementsToAnimate.forEach(element => {
-    observer.observe(element);
-});
-
-// Interactive functionality
-const buttons = document.querySelectorAll('.interactive-button');
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        smoothScroll(button.dataset.target);
-    });
+document.querySelectorAll('.section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(section);
 });
