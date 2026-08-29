@@ -337,9 +337,13 @@ h1, h2, h3, h4 {
 }
 
 .rayrabbit-floating-wapp svg {
-  width: 26px;
-  height: 26px;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  min-width: 24px !important;
   fill: currentColor;
+  display: block !important;
+  flex-shrink: 0 !important;
 }
 
 @media (max-width: 768px) {
